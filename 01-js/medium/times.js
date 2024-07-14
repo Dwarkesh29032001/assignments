@@ -9,5 +9,17 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    const starttime = new Date().getTime();
+    let sum = 0;
+    for(let i=1 ; i < n ; i++ ){
+        sum += i;
+    }
+    const endtime = new Date().getTime() ;
+    const timetaken = (endtime - starttime)/1000 ;   // in the mili secs 
+
+    return timetaken ;
 }
+
+console.log(`time taken to calculate the sum from 1 to 100 is ${calculateTime(100)}`);
+console.log(`time taken to calculate the sum from 1 to 100000 is ${calculateTime(100000)}`);
+console.log(`time taken to calculate the sum from 1 to 1000000000 is ${calculateTime(1000000000)}`);
