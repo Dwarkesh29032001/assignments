@@ -4,7 +4,17 @@
  * the function should return a promise just like before
  */
 
+//this assignment is same as 1 hard one 
+
 function sleep(milliseconds) {
+return new Promise((resovle)=>{
+    const startime = Date.now();
+    while(Date.now() - startime < milliseconds);
+    resovle();
+    });
 }
 
+// sleep(5000).then(()=>{
+//     console.log("5 seconds have passed !") ;
+// })
 module.exports = sleep;
